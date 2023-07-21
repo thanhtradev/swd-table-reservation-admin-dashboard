@@ -32,6 +32,7 @@
 //    console.error('An error occurred:', error);
 //  });
 //});
+const BASE_URL = "https://api.swd.nolamedia.tech";
 
 document.addEventListener("DOMContentLoaded", function() {
   // DOMContentLoaded event - Fires when the initial HTML document has been completely loaded and parsed
@@ -72,12 +73,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
       // Create an object to hold the login credentials
       var credentials = {
-        userId: username,
+        username: username,
         password: password
       };
 
       // Send the login request to the server
-      fetch('/user/login', {
+      fetch(BASE_URL + '/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
